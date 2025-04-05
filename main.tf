@@ -8,8 +8,8 @@ terraform {
     bucket = "sctp-ce9-tfstate"
     key    = "arpita-ce9-module3-lesson2.tfstate" #Change this
     region = "us-east-1"
-   
-    
+
+
 
   }
 
