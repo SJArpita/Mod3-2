@@ -4,8 +4,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "sctp-ce8-tfstate"
-    key    = "jaz-s3-tf-ci.tfstate" #Change this
+    bucket = "sctp-ce9-tfstate"
+    key    = "arpita-ce9-module3-lesson2.tfstate" #Change this
     region = "us-east-1"
   }
 }
