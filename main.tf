@@ -8,16 +8,8 @@ terraform {
     bucket = "sctp-ce9-tfstate"
     key    = "arpita-ce9-module3-lesson2.tfstate" #Change this
     region = "us-east-1"
-    checkov:skip=CKV_AWS_62
-    checkov:skip=CKV_AWS_145
-    checkov:skip=CKV_AWS_18
-    checkov:skip=CKV_AWS_144
-    checkov:skip=CKV_AWS_61
-    checkov:skip=CKV_AWS_6
-   
-    versioning_configuration {
-    status = "Enabled"
-  }
+
+
 
   }
 
@@ -39,7 +31,15 @@ locals {
 }
 
 resource "aws_s3_bucket" "s3_tf" {
+  #  checkov:skip=CKV_AWS_62
+  #   checkov:skip=CKV_AWS_145
+  #   checkov:skip=CKV_AWS_18
+  #   checkov:skip=CKV_AWS_144
+  #   checkov:skip=CKV_AWS_61
+  #   checkov:skip=CKV_AWS_6
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
 
-
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
