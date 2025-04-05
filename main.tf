@@ -8,14 +8,14 @@ terraform {
     bucket = "sctp-ce9-tfstate"
     key    = "arpita-ce9-module3-lesson2.tfstate" #Change this
     region = "us-east-1"
-    
+
   }
 
   required_version = ">= 1.1.7"
 
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.94.1"
     }
   }
@@ -30,6 +30,6 @@ locals {
 
 resource "aws_s3_bucket" "s3_tf" {
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
- 
+
 
 }
