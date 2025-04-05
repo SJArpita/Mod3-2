@@ -8,8 +8,8 @@ terraform {
     bucket = "sctp-ce9-tfstate"
     key    = "arpita-ce9-module3-lesson2.tfstate" #Change this
     region = "us-east-1"
-
-
+   
+    
 
   }
 
@@ -38,6 +38,11 @@ resource "aws_s3_bucket" "s3_tf" {
   #   checkov:skip=CKV_AWS_61
   #   checkov:skip=CKV_AWS_6
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
+
+}
+
+resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
+  bucket = aws_s3_bucket.s3_tf.id
 
   versioning_configuration {
     status = "Enabled"
